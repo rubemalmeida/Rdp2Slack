@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System.Configuration;
+using Rdp2Slack.Database;
+using Rdp2Slack.Model;
 
 namespace Rdp2Slack
 {
