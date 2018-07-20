@@ -40,7 +40,6 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtSlack = new MetroFramework.Controls.MetroTextBox();
             this.lblSlack = new MetroFramework.Controls.MetroLabel();
-            this.chkEnviarNotificacao = new MetroFramework.Controls.MetroCheckBox();
             this.chkReceberNotificacao = new MetroFramework.Controls.MetroCheckBox();
             this.btnExcluir = new MetroFramework.Controls.MetroButton();
             this.btnSalvar = new MetroFramework.Controls.MetroButton();
@@ -49,12 +48,19 @@
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.lblNome = new MetroFramework.Controls.MetroLabel();
             this.mTabPageLista = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtHistoricoGalera = new MetroFramework.Controls.MetroTextBox();
+            this.btnDireita = new MetroFramework.Controls.MetroButton();
+            this.btnEsquerda = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.tabPanel.SuspendLayout();
             this.mTabPageCadastro.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            this.mTabPageLista.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -67,7 +73,7 @@
             this.tabPanel.Controls.Add(this.mTabPageLista);
             this.tabPanel.Location = new System.Drawing.Point(24, 64);
             this.tabPanel.Name = "tabPanel";
-            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.SelectedIndex = 1;
             this.tabPanel.Size = new System.Drawing.Size(585, 272);
             this.tabPanel.TabIndex = 0;
             // 
@@ -117,9 +123,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(3, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(126, 19);
             this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Histórico:";
+            this.metroLabel1.Text = "Histórico da pessoa:";
             // 
             // txtHistoricoIndividual
             // 
@@ -133,9 +139,10 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnEsquerda);
+            this.metroPanel1.Controls.Add(this.btnDireita);
             this.metroPanel1.Controls.Add(this.txtSlack);
             this.metroPanel1.Controls.Add(this.lblSlack);
-            this.metroPanel1.Controls.Add(this.chkEnviarNotificacao);
             this.metroPanel1.Controls.Add(this.chkReceberNotificacao);
             this.metroPanel1.Controls.Add(this.btnExcluir);
             this.metroPanel1.Controls.Add(this.btnSalvar);
@@ -170,16 +177,6 @@
             this.lblSlack.TabIndex = 10;
             this.lblSlack.Text = "Slack:";
             // 
-            // chkEnviarNotificacao
-            // 
-            this.chkEnviarNotificacao.AutoSize = true;
-            this.chkEnviarNotificacao.Location = new System.Drawing.Point(4, 74);
-            this.chkEnviarNotificacao.Name = "chkEnviarNotificacao";
-            this.chkEnviarNotificacao.Size = new System.Drawing.Size(232, 15);
-            this.chkEnviarNotificacao.TabIndex = 9;
-            this.chkEnviarNotificacao.Text = "Notificar diretamente a quem derrubar?";
-            this.chkEnviarNotificacao.UseVisualStyleBackColor = true;
-            // 
             // chkReceberNotificacao
             // 
             this.chkReceberNotificacao.AutoSize = true;
@@ -192,18 +189,18 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(157, 95);
+            this.btnExcluir.Location = new System.Drawing.Point(110, 73);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(148, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(89, 23);
             this.btnExcluir.Style = MetroFramework.MetroColorStyle.Red;
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(3, 95);
+            this.btnSalvar.Location = new System.Drawing.Point(3, 73);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(148, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(101, 23);
             this.btnSalvar.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
@@ -215,7 +212,6 @@
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(89, 23);
             this.txtIP.TabIndex = 5;
-            this.txtIP.Text = "171.171.171.171";
             // 
             // lblIP
             // 
@@ -244,6 +240,7 @@
             // 
             // mTabPageLista
             // 
+            this.mTabPageLista.Controls.Add(this.metroPanel4);
             this.mTabPageLista.HorizontalScrollbarBarColor = true;
             this.mTabPageLista.Location = new System.Drawing.Point(4, 35);
             this.mTabPageLista.Name = "mTabPageLista";
@@ -251,6 +248,56 @@
             this.mTabPageLista.TabIndex = 1;
             this.mTabPageLista.Text = "Lista";
             this.mTabPageLista.VerticalScrollbarBarColor = true;
+            // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Controls.Add(this.txtHistoricoGalera);
+            this.metroPanel4.Controls.Add(this.metroLabel2);
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(4, 4);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(570, 226);
+            this.metroPanel4.TabIndex = 2;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(4, 4);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(123, 19);
+            this.metroLabel2.TabIndex = 2;
+            this.metroLabel2.Text = "Histórico da gelera:";
+            // 
+            // txtHistoricoGalera
+            // 
+            this.txtHistoricoGalera.Location = new System.Drawing.Point(3, 26);
+            this.txtHistoricoGalera.Multiline = true;
+            this.txtHistoricoGalera.Name = "txtHistoricoGalera";
+            this.txtHistoricoGalera.ReadOnly = true;
+            this.txtHistoricoGalera.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtHistoricoGalera.Size = new System.Drawing.Size(564, 197);
+            this.txtHistoricoGalera.TabIndex = 3;
+            // 
+            // btnDireita
+            // 
+            this.btnDireita.Location = new System.Drawing.Point(257, 73);
+            this.btnDireita.Name = "btnDireita";
+            this.btnDireita.Size = new System.Drawing.Size(48, 23);
+            this.btnDireita.TabIndex = 12;
+            this.btnDireita.Text = ">>";
+            // 
+            // btnEsquerda
+            // 
+            this.btnEsquerda.Location = new System.Drawing.Point(205, 73);
+            this.btnEsquerda.Name = "btnEsquerda";
+            this.btnEsquerda.Size = new System.Drawing.Size(48, 23);
+            this.btnEsquerda.TabIndex = 13;
+            this.btnEsquerda.Text = "<<";
             // 
             // Panel
             // 
@@ -270,6 +317,9 @@
             this.metroPanel3.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            this.mTabPageLista.ResumeLayout(false);
+            this.metroPanel4.ResumeLayout(false);
+            this.metroPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,9 +342,13 @@
         private MetroFramework.Controls.MetroTextBox txtNome;
         private MetroFramework.Controls.MetroLabel lblNome;
         private MetroFramework.Controls.MetroButton btnExcluir;
-        private MetroFramework.Controls.MetroCheckBox chkEnviarNotificacao;
         private MetroFramework.Controls.MetroCheckBox chkReceberNotificacao;
         private MetroFramework.Controls.MetroTextBox txtSlack;
         private MetroFramework.Controls.MetroLabel lblSlack;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroTextBox txtHistoricoGalera;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroButton btnEsquerda;
+        private MetroFramework.Controls.MetroButton btnDireita;
     }
 }

@@ -7,44 +7,46 @@ using Rdp2Slack.Database;
 
 namespace Rdp2Slack.Model
 {
-    public class User
+    public class User : System.Attribute
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string Slack { get; set; }
+        public string IP { get; set; }
 
-        public static User GetUser(int id) {
-            return DatabaseHelper.GetById<User>(id);
+        public User(string nome, string slack, string ip)
+        {
+            Nome = nome;
+            Slack = slack;
+            IP = ip;
         }
 
-        //private Slack GetSlack()
+        //public static User Get(int id)
         //{
-        //    CreateAndOpenDb
+        //    return DatabaseHelper.GetById<User>(id);
         //}
 
-        //private void SetSlack(Slack value)
+        //public static List<User> GetAll()
         //{
-        //    slack = value;
+        //    return DatabaseHelper.ReadAll<User>();
         //}
 
-        //public Ip GetIpAddress()
+        //public int Insert()
         //{
-        //    return ipAddress;
+        //    this.Id = DatabaseHelper.Insert<User>("Nome", this.Nome);
+        //    return this.Id;
         //}
 
-        //public void SetIpAddress(Ip value)
+        //public int Update()
         //{
-        //    ipAddress = value;
+        //    this.Id = DatabaseHelper.Update<User>($"Nome='{this.Nome}'", $"Id={this.Id}");
+        //    return this.Id;
         //}
 
-        //public static List<User> GetAllRecords()
+        //public void Delete()
         //{
-        //    DatabaseHelper.CreateAndOpenDb();
-        //    ExecuteNonQuery
-        //    //using (var db = .))
-        //    //{
-        //    //    return db.Query<Author>
-        //    //    (“Select * From Author”).ToList();
-        //    //}
+        //    DatabaseHelper.Delete<User>(this.Id);
         //}
+
     }
 }
